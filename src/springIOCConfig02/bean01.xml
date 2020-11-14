@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!--
+    bean对象对象属性的注入
+    ref:reference:引用
+    autowire：
+     byName:按名称注入
+     byType:按类型注入
+   -->
+    <bean id="user" class="com.bjpowernode.spring.springIOC02.bean.User">
+        <property name="name" value="张三" />
+        <property name="age" value="100" />
+        <!--<property name="cat" ref="cat" />-->
+    </bean>
+
+   <bean id="cat" class="com.bjpowernode.spring.springIOC02.bean.Cat">
+        <property name="kind" value="小猫猫" />
+    </bean>
+
+</beans>

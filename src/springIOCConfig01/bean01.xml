@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!--
+    bean对象普通属性的注入
+        构造方法:重载
+        setter方法    推荐
+   -->
+    <bean id="dog" class="com.bjpowernode.spring.springIOC01.bean.Dog">
+        <constructor-arg name="name" value="波斯狗" />
+        <constructor-arg name="age" value="100" />
+    </bean>
+
+
+    <!--
+        setter方法
+        name值不是实体类的属性名
+        而是set方法去掉set三个字符后的所有字符首字母小写
+    -->
+    <bean id="dog1" class="com.bjpowernode.spring.springIOC01.bean.Dog">
+        <property name="name" value="哈士奇" />
+        <property name="age" value="20" />
+    </bean>
+
+
+</beans>

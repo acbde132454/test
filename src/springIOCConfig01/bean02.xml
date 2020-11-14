@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!--
+    bean对象的集合属性注入
+   -->
+    <bean id="person" class="com.bjpowernode.spring.springIOC01.bean.Person">
+        <property name="names">
+            <!--list集合-->
+            <list>
+                <value>张三</value>
+                <value>李四</value>
+                <value>二狗子</value>
+            </list>
+
+        </property>
+        <!--set集合-->
+        <property name="account">
+            <set>
+                <value>001</value>
+                <value>002</value>
+                <value>003</value>
+            </set>
+        </property>
+
+        <property name="hobby">
+            <map>
+                <entry key="运动" value="足球" />
+                <entry key="游戏" value="dota" />
+                <entry key="旅游" value="徒步旅行" />
+            </map>
+        </property>
+    </bean>
+
+</beans>

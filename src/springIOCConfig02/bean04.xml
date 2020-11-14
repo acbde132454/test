@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <!--
+      Bean的生命周期
+      1、指的是bean对象在IOC中的生命周期，在容器初始创建对象到调用close方法，不是
+		指对象在内存中的生命周期
+	  2、init-method和destroy-method指的是在Bean的生命周期中可以执行两个方法，但是
+		不是说必须要制定这两个功能
+	  3、当scope属性为prototype的时候，不会调用destroy-method对应的方法
+   -->
+
+   <bean id="user"
+         init-method="init"
+         destroy-method="destroy"
+         scope="prototype"
+          class="com.bjpowernode.spring.springIOC02.bean.User">
+
+
+    </bean>
+
+</beans>

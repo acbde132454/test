@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AccountMapper">
+
+
+   <update id="zhuanchu">
+       update account set money=money-30 where name='王陈'
+   </update>
+
+    <update id="zhuanru">
+       update account set money=money+30 where name='女朋友'
+   </update>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--配置切面类-->
+    <bean id="aspect" class="com.bjpowernode.spring.springAOP01.service.Security" />
+
+    <!--被代理类-->
+    <bean id="beiJing" class="com.bjpowernode.spring.springAOP01.service.HeBei"/>
+
+
+    <aop:config>
+        <!--
+            id=标识
+            expression:描述哪些方法应用了消息(Advice)
+            execution:具体定义查找方法的过程
+
+            第一个*：访问修饰符和返回值类型
+            ..:本包及其子包
+            第二个*:所有类
+            第三个*:所有方法 addUser addDept  add*
+            第二个..:0-n参数
+
+            MVC:
+            M:Model
+            SpringAOP一般用来管理事务的，而事务实在service层处理的
+         -->
+        <aop:pointcut id="pointcut"
+                      expression="execution(* com.bjpowernode.spring.springAOP01.service.*.sal*(..))" />
+
+        <!--ref:切面类的引用-->
+        <aop:aspect ref="aspect">
+            <!--配置消息的-->
+            <!--<aop:before method="security" pointcut-ref="pointcut" />-->
+            <aop:after method="security" pointcut-ref="pointcut" />
+        </aop:aspect>
+    </aop:config>
+
+</beans>

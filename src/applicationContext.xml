@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- <import resource="classpath:springIOCConfig01/bean01.xml" />-->
+    <import resource="classpath:springAOP02/bean01.xml" />
+
+    <!--
+        通过bean标签来进行配置
+        class:指定bean的类路径:通过反射创建该对象
+        id:表示区分每个bean对象
+    -->
+    <!--<bean id="dog" class="com.bjpowernode.spring.springIOC01.bean.Dog"></bean>
+    <bean id="cock" class="com.bjpowernode.spring.springIOC01.bean.Cock"></bean>-->
+
+</beans>

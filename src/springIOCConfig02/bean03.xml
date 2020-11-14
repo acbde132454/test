@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <!--
+      scope:
+         singleton:单例模式:每次生成的对象都是同一个对象 默认方式
+         prototype:多例模式:每次生成的对象不同
+         单例和多例使用场景
+
+         下面三个了解
+         request:没发送一次request请求创建对象
+         session:每次会话创建
+         globalSession:多系统之间每次会话创建
+   -->
+
+   <bean id="user"
+          scope="prototype"
+          class="com.bjpowernode.spring.springIOC02.bean.User">
+
+
+    </bean>
+
+</beans>

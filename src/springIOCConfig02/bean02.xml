@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <!--批量扫描包
+        context:上下文
+        component:组件
+        scan:扫描
+       对于Spring而言，只要是java类都被看做bean对象
+       被扫描的包下的类扫描后，不代表包下面的类就被Spring管理了,
+       必须加上指定的注解才能说明bean对象被SpringIOC管理类
+
+       include-filter:指扫描满足条件的bean
+       use-default-filters="false"
+         type:
+            annotation:扫描满足条件的注解的bean
+            regex:扫描满足条件的包下bean
+
+      use-default-filters="true"
+       context:exclude-filter:排除指定的bean
+   -->
+   <context:component-scan use-default-filters="true" base-package="com.bjpowernode.spring.springIOC02.extra">
+      <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />-->
+      <!--<context:include-filter type="regex" expression="com.bjpowernode.spring.springIOC02.extra.bean1.*" />-->
+      <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+   </context:component-scan>
+
+</beans>
